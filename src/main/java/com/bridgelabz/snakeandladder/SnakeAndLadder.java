@@ -10,20 +10,23 @@ public class SnakeAndLadder {
             System.out.println("The player get dice value as: " + diceValue);
             int option = (int) (Math.floor(Math.random() * 10) % 3);
             System.out.println("Option: " + option);
-            if (option == 0) {
+            if(option == 0) {
                 System.out.println("No play");
                 currentPosition += 0;
-            } else if (option == 1) {
+            } else if(option == 1) {
                 System.out.println("Ladder");
                 currentPosition += diceValue;
+                if(currentPosition > 100 ) {
+                    currentPosition -= diceValue;
+                }
             } else {
                 System.out.println("Snake");
                 currentPosition -= diceValue;
-                if (currentPosition < 0) {
+                if(currentPosition < 0) {
                     currentPosition = startPosition;
                 }
             }
-            System.out.println("Current Position: " + currentPosition);
+            System.out.println("Current Position: " +currentPosition);
         }
     }
 }
