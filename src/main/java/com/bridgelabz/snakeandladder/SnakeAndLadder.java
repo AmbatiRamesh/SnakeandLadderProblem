@@ -3,11 +3,12 @@ package com.bridgelabz.snakeandladder;
 public class SnakeAndLadder {
     public static void main(String[] args) {
         System.out.println("------Welcome to Snake and Ladder Problem------");
-        int startPosition = 0, currentPosition = 0, finalPosition = 100;
+        int startPosition = 0, currentPosition = 0, finalPosition = 100, noOfRoll = 0;
         currentPosition = startPosition;
         while (currentPosition < finalPosition) {
             int diceValue = (int) (Math.floor(Math.random() * 10) % 6) + 1;
             System.out.println("The player get dice value as: " + diceValue);
+            noOfRoll++;
             int option = (int) (Math.floor(Math.random() * 10) % 3);
             System.out.println("Option: " + option);
             if(option == 0) {
@@ -28,5 +29,6 @@ public class SnakeAndLadder {
             }
             System.out.println("Current Position: " +currentPosition);
         }
+        System.out.println("Number Of total Dice: " +noOfRoll);
     }
 }
